@@ -24,7 +24,7 @@ To get a better estimate, we can repeat this process for the other 29 parks, tot
 As expected, removing pitcher biases reduced the measured variablilty in release height, but did not eliminate it completely.
 
 # Results:
-My final estimate is that MLB mounds range in height by roughly 1.2 inches, with Petco Park on the short end and Minute Maid Park at the tall end. Each estimate is relative, and each comes with a one-sigma error of roughly +/- 0.24 inches. See relative_height_estimates.png for full results.
+My final estimate is that MLB mounds range in height by roughly 1.2 inches, with Petco Park on the short end and Minute Maid Park at the tall end. Each estimate is relative, and each comes with a one-sigma error of roughly +/- 0.24 inches. See release_height_by_park.png for full results.
 
 # Conclusions:
 My next goal was to determine whether this variance is truly due to the mounds themselves, or due to mis-calibrations of the Hawk-Eye system. One metric that should be highly dependent on mound height is vertical approach angle, or VAA. Some quick trigonometry tells us that a pitcher must throw a ball just over a tenth of a degree more steeply downward to reach the plat from a mound 1 inch taller than usual. That's quite a small difference, but over a set of thousands of pitches, it is detectable.
