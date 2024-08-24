@@ -1,14 +1,12 @@
 # Mound_Height
-Analysis of variance in release height at MLB parks
-
 This research aims to quantify (and to a limited extent, explain) the variance in release height data at MLB parks, and to explore the effects of this variance on pitcher performance.
 
-BACKGROUND:
+# BACKGROUND:
 This project arose from an odd feature I found in release height data while working on park effects for Shape+: ballparks seem to influence a pitcher's release height to a significant degree. This should not be the case, since all MLB mounds are required to be precisely 10 feet above home plate, with a slope of one inch per foot. Mound height is supposedly enforced with a tolerance of just 1/16 of an inch. However, that claim is severely contradicted by the release height data, which shows a range of at least one inch. There are two explanations for this inconsistency:
 a) MLB mound height and/or slope is not properly regulated, or
 b) The Hawk-Eye trackiing system employed by MLB at all 30 parks is not properly calibrated.
 
-METHOD:
+# METHOD:
 It took me quite a while to figure out a method which removes all possible pitcher bias, but I believe I have done so. Before I explain it, I feel obligated to share some intermediate steps, so that you appreciate why I had to utilize such a complex method. If you're not interested in the why's and wherefore's, feel free to skip ahead to the RESULTS section.
 
 While working on park effects for Shape+, I aggregated the values of several metrics at each ballpark. I was intrigued by the differences in mound height, but initially assumed that it was due to different pitchers pitching at different parks; if one team employs a squad of 6'6" pitchers, it follows that the average release height at their home park ought to be higher. 
@@ -23,10 +21,10 @@ I am rather proud of my eventual solution. Bear with me now, because it's a bit 
 
 As expected, removing pitcher biases reduced the measured variablilty in release height, but did not eliminate it completely.
 
-RESULTS:
+# RESULTS:
 My final estimate is that MLB mounds range in height by roughly 1.2 inches, with Petco Park on the short end and Minute Maid Park at the tall end. Each estimate is relative, and each comes with an error of roughly +/- 0.5 inches. Hwoever, it is clear that pitchers' release heights change between ballparks far more significantly than they ought to.
 
-CONCLUSIONS:
+# CONCLUSIONS:
 My next goal was to determine whether this variance is truly due to the mounds themselves, or due to mis-calibrations of the Hawk-Eye system. One metric that should be highly dependent on mound height is vertical approach angle, or VAA. Some quick trigonometry tells us that a pitcher must throw a ball just over a tenth of a degree more steeply downward to reach the plat from a mound 1 inch taller than usual. That's quite a small difference, but over a set of thousands of pitches, it is measurable.
 
 And in fact we do observe a correlation –- weak but significant, with an R-squared value of 0.12 -- between estimated mound height and VAA. Now, you might be thinking that this doesn't prove anything, since if Hawk-Eye was mis-calibrated it would surely lead to this exact relationship. However, VAA is not actually measured directly by Hawk-Eye; it must be calculated using several parameters, none of which is the release height of the pitch. So, score one for the real mound effects.
