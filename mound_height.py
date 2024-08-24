@@ -158,18 +158,38 @@ rh_pitcher_park['delta'] = rh_pitcher_park['release_height'] - rh_pitcher_park['
 mean_delta_by_park = rh_pitcher_park.groupby('home_team')['delta'].mean()
 sorted_delta_by_park = mean_delta_by_park.sort_values(ascending = False)
 
+# get standard deviation
+std_err_by_park = rh_pitcher_park.groupby('home_team')['delta'].std()
+sorted_std_errors_by_park = std_err_by_park.loc[sorted_delta_by_park.index]
+
 # plot
 plt.figure(figsize=(9, 5))
 norm = plt.Normalize(vmin=sorted_delta_by_park.min(), vmax=sorted_delta_by_park.max(), clip=True)
-midpoint = np.abs(sorted_delta_by_park).max()
-bars = plt.bar(
-    sorted_delta_by_park.index, 
-    sorted_delta_by_park, 
-    color=plt.cm.coolwarm(norm(sorted_delta_by_park)))
-plt.title("Estimated Relative Mound Hieght (Using pitchers' avg. release height at each ballpark)")
+
+# scatterplot with error bars
+plt.errorbar(
+    sorted_delta_by_park.index,
+    sorted_delta_by_park,
+    yerr=sorted_std_errors_by_park,
+    fmt='none',
+    ecolor='grey',
+    elinewidth=2,
+    capsize=4,)
+
+# color points based on height
+points = plt.scatter(
+    sorted_delta_by_park.index,
+    sorted_delta_by_park,
+    c=sorted_delta_by_park,
+    cmap='coolwarm',
+    norm=norm,
+    s=100)
+
+# formatting
+plt.title("Estimated Relative Mound Height (Using pitchers' avg. release height at each ballpark)")
 plt.xlabel('Ballpark')
 plt.ylabel('Average Difference in Release Height (inches)')
-plt.text(9.3,-0.4, 'Data via Baseball Savant, 2021-2024')
+plt.text(9.3, -2, 'Data via Baseball Savant, 2021-2024')
 plt.xticks(rotation=45)
 plt.tight_layout()
 plt.show()
@@ -180,7 +200,6 @@ plt.show()
 #
 # Final estimate - using pairwise comparison
 #
-
 
 
 
