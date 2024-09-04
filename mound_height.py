@@ -13,7 +13,7 @@ import scipy.stats as stats
 import matplotlib.pyplot as plt
 from tqdm import tqdm
 from itertools import combinations
-from matplotlib.ticker import FuncFormatter
+from statistics import NormalDist
 
 
 
