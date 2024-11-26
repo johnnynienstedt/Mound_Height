@@ -42,7 +42,9 @@ However, this still explains only a fifth of the variance in mound height. It se
 For analysts, this distinction is not incredibly important; it's more important to know how the mound effects a pitcher's delivery than why. So...
 
 # Any Effect on Pitch Shapes?
-We've already determined that mound height effects VAA very strongly. However, that is the only statistic I have found that displays a strong relationship with this effect. Velocity, extension, movement, and Whiff% are all duds, even when accounting for pitch type and location. That does not mean that no effect exists. If it does, however, it is likely too subtle to have appreciable predictive value. 
+We've already determined that mound height effects VAA very strongly. However, that is the only statistic I have found that displays a strong relationship with this effect. Velocity, extension, movement, and Whiff% are all duds, even when accounting for pitch type and location. This is not althogether susprising; even in ideal conditions, a tenth of a degree of VAA can only be expected to add 0.7 percentage points of Whiff%. 
+
+That does not mean that no effect exists. If it does, however, it is likely too subtle to have appreciable predictive value. 
 
 We know that the psychology of pitching on a 'tall' mound is important, but this can also be due to the proximity of the backstop, the crowning of the field (some grounds crews create slight slopes to better drain water), or even the cut of the infield grass. Tampa Bay's mound is frequently mentioned as feeling tall, but my data places it in the bottom half.
 
