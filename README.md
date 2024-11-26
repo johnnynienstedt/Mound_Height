@@ -42,7 +42,7 @@ However, this still explains only a fifth of the variance in mound height. It se
 For analysts, this distinction is not incredibly important; it's more important to know how the mound effects a pitcher's delivery than why. So...
 
 # Any Effect on Pitch Shapes?
-We've already determined that mound height effects VAA very strongly. However, that is the only statistic I have found that displays a strong relationship with this effect. Velocity, extension, movement, and Whiff% are all duds, even when accounting for pitch type and location. This is not althogether susprising; even in ideal conditions, a tenth of a degree of VAA can only be expected to add 0.7 percentage points of Whiff%, and comparing different parks with different climates certainly does not constitute ideal conditions. Perhaps one day I will attempt to control for these other variables.
+We've already determined that mound height affects VAA very strongly. However, that is the only statistic I have found that displays a strong relationship with this effect. Velocity, extension, movement, and Whiff% are all duds, even when accounting for pitch type and location. This is not althogether susprising; even in ideal conditions, a tenth of a degree of VAA can only be expected to add 0.7 percentage points of Whiff%, and comparing different parks with different climates certainly does not constitute ideal conditions. Perhaps one day I will attempt to control for these other variables.
 
 So, we cannot say for certain whether or not any true effect (in terms of in-game results) exists. Even if it does, it is likely too subtle to have appreciable predictive value. 
 
