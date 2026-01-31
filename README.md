@@ -2,7 +2,7 @@
 This research aims to quantify (and to a limited extent, explain) the variance in release height data at MLB parks, and to explore the effects of this variance on pitcher performance.
 
 # Background:
-This project arose from an odd feature I found in release height data while working on park effects for my pitch shape model: ballparks seem to influence a pitcher's release height to a significant degree. This should not be the case, since all MLB mounds are required to be precisely 10 feet above home plate, with a slope of one inch per foot. Mound height is supposedly enforced to a tolerance of just 1/16 of an inch. However, that claim is contradicted by the release height data, which shows a range much greater than that. There are three explanations for this inconsistency:
+This project arose from an odd feature I found in release height data while working on park effects for my pitch shape model: ballparks seem to influence a pitcher's release height to a significant degree. This should not be the case, since the rubber is required to be precisely 10 inches above home plate, supposedly enforced to 1/16th of an inch. The slope of the mound is specified as well, at one inch per foot. However, the release height data shows disparities of more than an inch between some MLB mounds. There are three explanations for this inconsistency:
 a) MLB mound height and/or slope is not properly regulated,
 b) Mounds degrade at different rates in-game, or
 c) The Hawk-Eye tracking system employed by MLB at all 30 parks is not properly calibrated.
@@ -35,7 +35,7 @@ And in fact we can detect this relationship, with a strong R-squared value of 0.
 # Height, Slope, or Degradation?
 The easiest of these to test is degradation. Unsurprisingly, I observed that the average MLB mound degrades by about a quarter of an inch per inning over the course of a game. However, even though these rates varied significantly between parks, they displayed a very weak relationship (0.03 R-squared) with release height effects. 
 
-I next isolated the initial mound state, determined by the park effect from the first inning only. This fared a bit better (0.10 R-squared), but still not good. It follows that release height-boosting mounds ought to be both 'tall' (or less sloped, as the case may be) to start with and slow to degrade, so I next tested the ratio of initial height to degradation rate. This doubled the correlation to 0.19 R-squared.
+I next isolated the initial mound state, determined by the park effect from the first inning only. This fared a bit better (0.10 R-squared), but still not very significant. It follows that release height-boosting mounds ought to be both 'tall' (or less sloped, as the case may be) to start with and slow to degrade, so I next tested the ratio of initial height to degradation rate. This doubled the correlation to 0.19 R-squared.
 
 However, this still explains only a fifth of the variance in mound height. It seems likely that all three of the main mound features factor in to the release height effect, but it is quite difficult to disentangle them. Height and slope are especially intertwined. A pitcher's release height is determined mostly by the height of his landing zone, which is a function of not just raw mound height and slope, but also of the size of the flat area just in front of the pitcher's plate. This area is notoriously hard to maintain, and I have heard from one MLB groundskeeper that they simply start the slope at the rubber. If different grounds crews have different standards, this could also have an impact on the release height effect.
 
@@ -47,4 +47,3 @@ We've already determined that mound height affects VAA very strongly. However, t
 So, we cannot say for certain whether or not any true effect (in terms of in-game results) exists. Even if it does, it is likely too subtle to have appreciable predictive value. 
 
 We know that the psychology of pitching on a 'tall' mound is important, but this can also be due to the proximity of the backstop, the crowning of the field (some grounds crews create slight slopes to better drain water), or even the cut of the infield grass. Tampa Bay's mound is frequently mentioned as feeling tall, but my data places it in the bottom half.
-
